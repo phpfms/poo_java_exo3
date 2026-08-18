@@ -1,33 +1,29 @@
 package fr.fms.entities;
 
-public class Employe extends Personne {
+public abstract class Employe extends Personne {
 	
 	private String entreprise;
-	private Double salaire;
 	
-	public Employe(City city, String name, String first_name, int age, String adress, String entreprise, Double salaire)
+	public Employe(City city, String name, String first_name, int age, String adress, String entreprise)
 	{
         super(city, name, first_name, age, adress);
         this.setEntreprise(entreprise);
-        this.setSalaire(salaire);
     }
 	
 	public Employe(String city, String country, String name, String first_name, int age, String adress,
-			String entreprise, double salaire) {
+			String entreprise) {
 
 		super(new City(city, country), name, first_name, age, adress);
 
 		this.setEntreprise(entreprise);
-		this.setSalaire(salaire);
 	}
 	
 	public Employe(String city, String country, int nb_people, String name, String first_name, int age, String adress,
-			String entreprise, double salaire) {
+			String entreprise) {
 
 		super(new City(city, country, nb_people), name, first_name, age, adress);
 
 		this.setEntreprise(entreprise);
-		this.setSalaire(salaire);
 	}
 
 	public String getEntreprise() {
@@ -38,13 +34,6 @@ public class Employe extends Personne {
 		this.entreprise = entreprise;
 	}
 
-	public Double getSalaire() {
-		return salaire;
-	}
-
-	public void setSalaire(Double salaire) {
-		this.salaire = salaire;
-	}
 	
 	@Override
 	public String toString() {
@@ -60,8 +49,9 @@ public class Employe extends Personne {
 	        + " nb hab=" + get_city().get_people()
 	        + " ]"
 	        + " [entreprise=" + entreprise
-	        + " salaire=" + salaire
 	        + " ]";
 	}
+	
+	public abstract double calculerSalaire(double chiffreAffaires);
 
 }
