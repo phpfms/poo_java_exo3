@@ -27,6 +27,14 @@ public class TestEntities {
 			System.out.println(element);
 		}
 		
+		System.out.println("\n");
+		
+		for(Employe element : team) {
+			System.out.println( " salaire annuel de " + element.get_name_p() + element.get_first_name()
+			+":" + Math.round( element.calculerSalaire ( element.getmoney() ) ) );
+		}
+		
+		
 	}
 
 }

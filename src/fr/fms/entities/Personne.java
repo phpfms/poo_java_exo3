@@ -1,6 +1,6 @@
 package fr.fms.entities;
 
-public class Personne {
+public abstract class Personne {
 	
 	private City city;
 	private String name;

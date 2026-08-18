@@ -3,6 +3,7 @@ package fr.fms.entities;
 public abstract class Employe extends Personne {
 	
 	private String entreprise;
+	protected static final double CA = 500000;
 	
 	public Employe(City city, String name, String first_name, int age, String adress, String entreprise)
 	{
@@ -33,6 +34,8 @@ public abstract class Employe extends Personne {
 	public void setEntreprise(String entreprise) {
 		this.entreprise = entreprise;
 	}
+	
+	public abstract double getmoney();
 
 	
 	@Override
@@ -52,6 +55,6 @@ public abstract class Employe extends Personne {
 	        + " ]";
 	}
 	
-	public abstract double calculerSalaire(double chiffreAffaires);
+	public abstract double calculerSalaire(double valeur);
 
 }

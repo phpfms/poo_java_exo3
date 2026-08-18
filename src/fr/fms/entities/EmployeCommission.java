@@ -19,7 +19,7 @@ public class EmployeCommission extends Employe{
 		this.setPourcentage(pourcentage);
 	}
     
-    public double getPourcentage() {
+    public double getmoney() {
         return pourcentage;
     }
     
@@ -39,8 +39,20 @@ public class EmployeCommission extends Employe{
     }
 
     @Override
-    public double calculerSalaire(double chiffreAffaires) {
-        return chiffreAffaires * pourcentage / 100;
+    public double calculerSalaire(double tx) {
+    	
+    	tx = tx/100;
+    	
+    	if (tx < 0) {
+    		System.out.println("Erreur : le pourcentage ne peut pas être négatif, je mets 0.");
+    		tx = 0.0;
+    	}
+    	if (tx > 1) {
+    		System.out.println("Erreur : le pourcentage ne peut pas être superieur à 100, je mets 100.");
+    		tx = 1;
+    	}
+    	
+        return CA * pourcentage / 100;
     }
 
 }

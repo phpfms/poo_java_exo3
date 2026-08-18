@@ -18,6 +18,11 @@ public class EmployeSalary extends Employe{
 		super(city, country, nb_people, name, first_name, age, adress, entreprise);
 		this.salaire = salaire;
 	}
+	
+	public double getmoney() {
+		return salaire;
+	}
+
     
     @Override
     public String toString() {
@@ -26,8 +31,14 @@ public class EmployeSalary extends Employe{
     }
 
     @Override
-    public double calculerSalaire(double chiffreAffaires) {
-        return salaire;
+    public double calculerSalaire(double salaire) {
+    	
+    	if (salaire < 0) {
+    		System.out.println("Erreur : le salaire ne peut pas être négatif, je mets 0.");
+    		salaire = 0.0;
+    	}	
+
+        return salaire * 0.8;
     }
    
 }
