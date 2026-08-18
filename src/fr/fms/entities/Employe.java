@@ -46,7 +46,7 @@ public abstract class Employe extends Personne {
 	        + " BornCity ["
 	        + get_city().get_name()
 	        + " stat=" + get_city().get_country()
-	        + " nb hab=" + get_city().get_people()
+	       // + " nb hab=" + get_city().get_people()
 	        + " ]"
 	        + " [entreprise=" + entreprise
 	        + " ]";
